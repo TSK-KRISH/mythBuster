@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.myth.mythBuster.model.Myth;
 import com.example.myth.mythBuster.service.MythService;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api/myths")
 public class MythController {

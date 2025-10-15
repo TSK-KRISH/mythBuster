@@ -1,0 +1,9 @@
+<div class="container">
+  <h2>🧠 All Myths</h2>
+
+  <div class="myth-card" *ngFor="let myth of myths">
+    <h3>{{ myth.mythText }}</h3>
+    <p><strong>Response:</strong> {{ myth.aiResponse }}</p>
+    <small><strong>Created:</strong> {{ myth.createdAt | date: 'medium' }}</small>
+  </div>
+</div>
