@@ -1,0 +1,63 @@
+.login-container {
+  max-width: 420px;
+  margin: 4rem auto;
+  padding: 1.8rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(44, 62, 80, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.login-container h2 {
+  text-align: center;
+  color: var(--primary-color);
+  font-size: 1.8rem;
+}
+
+.login-container label {
+  font-weight: 600;
+  color: #34495e;
+}
+
+input {
+  width: 100%;
+  padding: 0.9rem;
+  border-radius: 6px;
+  border: 1px solid #e0e6ef;
+}
+
+button {
+  background-color: var(--secondary-color);
+  color: white;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.error {
+  color: var(--error-color);
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.auth-footer {
+  text-align: center;
+  margin-top: 0.6rem;
+}
+
+.auth-link {
+  display: inline-block;
+  padding: 6px 10px;
+  background: transparent;
+  color: var(--secondary-color);
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.auth-link:hover {
+  background: rgba(52, 152, 219, 0.08);
+}

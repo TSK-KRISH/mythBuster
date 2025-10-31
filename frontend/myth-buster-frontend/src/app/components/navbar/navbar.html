@@ -1,6 +1,8 @@
 <div class="topnav">
-  <a class="active" href="#home">Home</a>
-  <a routerLink="">Ask</a>
-  <a routerLink="allMyths">All Myths</a>
-  <a href="#about">About</a>
+  <div class="nav-links">
+    <a routerLink="/ask" routerLinkActive="active">Home</a>
+    <a routerLink="/all-myths" routerLinkActive="active">All Myths</a>
+    <a routerLink="/about" routerLinkActive="active">About</a>
+  </div>
+  <a href="javascript:void(0)" (click)="logout()" class="logout-btn">Logout</a>
 </div>

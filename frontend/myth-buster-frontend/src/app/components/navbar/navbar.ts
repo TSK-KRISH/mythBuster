@@ -1,12 +1,21 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
-  imports: [RouterLink],
+  standalone: true,
+  imports: [RouterLink, RouterLinkActive],
   templateUrl: './navbar.html',
-  styleUrl: './navbar.css'
+  styleUrls: ['./navbar.css']
 })
 export class Navbar {
+  constructor(private router: Router) {}
 
+  logout() {
+    // Clear any stored authentication tokens
+    localStorage.removeItem('auth_token');
+    
+    // Navigate to login page
+    this.router.navigate(['/login']);
+  }
 }

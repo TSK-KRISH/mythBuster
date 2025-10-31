@@ -1,1 +1,81 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global Styles */
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --accent-color: #e74c3c;
+  --background-color: #ecf0f1;
+  --text-color: #2c3e50;
+  --success-color: #27ae60;
+  --error-color: #e74c3c;
+  --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --border-radius: 8px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Common form styles */
+.form-container {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+}
+
+/* Buttons should be inline by default so components can control width. */
+button {
+  display: inline-block;
+  width: auto;
+  padding: 0.8rem 1rem;
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.12s ease;
+}
+
+/* Keep full width buttons inside auth forms and other card containers */
+.form-container button,
+.login-container button,
+.register-container button,
+.form-group button {
+  width: 100%;
+  padding: 0.9rem;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+.error {
+  color: var(--error-color);
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}

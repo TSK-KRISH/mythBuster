@@ -7,70 +7,81 @@ import java.time.LocalDateTime;
 @Table(name = "myths")
 public class Myth {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-	@Column(nullable = false, length = 500)
-	private String mythText;
+    @Column(nullable = false, length = 500)
+    private String mythText;
 
-	@Column(columnDefinition = "TEXT")
-	private String aiResponse;
+    @Column(columnDefinition = "TEXT")
+    private String aiResponse;
 
-	@Column(length = 50)
-	private String verdict; // e.g. "True", "False", or "Uncertain"
+    @Column(length = 50)
+    private String verdict; // e.g. "True", "False", or "Uncertain"
 
-	private LocalDateTime createdAt = LocalDateTime.now();
+    private LocalDateTime createdAt = LocalDateTime.now();
 
-	// --- Constructors ---
-	public Myth() {
-	}
+    // New field to link myth to user (nullable to preserve legacy rows)
+    @Column(name = "user_id", nullable = true)
+    private Long userId;
 
-	public Myth(String mythText, String aiResponse, String verdict) {
-		this.mythText = mythText;
-		this.aiResponse = aiResponse;
-		this.verdict = verdict;
-		this.createdAt = LocalDateTime.now();
-	}
+    public Myth() {
+    }
 
-	// --- Getters and Setters ---
-	public Long getId() {
-		return id;
-	}
+    public Myth(String mythText, String aiResponse, String verdict) {
+        this.mythText = mythText;
+        this.aiResponse = aiResponse;
+        this.verdict = verdict;
+        this.createdAt = LocalDateTime.now();
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    // Getters and Setters
+    public Long getId() {
+        return id;
+    }
 
-	public String getMythText() {
-		return mythText;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public void setMythText(String mythText) {
-		this.mythText = mythText;
-	}
+    public String getMythText() {
+        return mythText;
+    }
 
-	public String getAiResponse() {
-		return aiResponse;
-	}
+    public void setMythText(String mythText) {
+        this.mythText = mythText;
+    }
 
-	public void setAiResponse(String aiResponse) {
-		this.aiResponse = aiResponse;
-	}
+    public String getAiResponse() {
+        return aiResponse;
+    }
 
-	public String getVerdict() {
-		return verdict;
-	}
+    public void setAiResponse(String aiResponse) {
+        this.aiResponse = aiResponse;
+    }
 
-	public void setVerdict(String verdict) {
-		this.verdict = verdict;
-	}
+    public String getVerdict() {
+        return verdict;
+    }
 
-	public LocalDateTime getCreatedAt() {
-		return createdAt;
-	}
+    public void setVerdict(String verdict) {
+        this.verdict = verdict;
+    }
 
-	public void setCreatedAt(LocalDateTime createdAt) {
-		this.createdAt = createdAt;
-	}
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
 }
